@@ -70,7 +70,7 @@ MODULES = [
     'voting',
 ]
 
-BASEURL = 'http://localhost:8000'
+BASEURL = 'http://app_7b95e0fe-1532-4069-a286-5c2412580e64.cleverapps.io'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -168,10 +168,10 @@ ALLOWED_VERSIONS = ['v1', 'v2']
 DEFAULT_VERSION = 'v1'
 
 
-STATIC_URL = '/public/static/'
-MEDIA_URL = '/public/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'public/media')
-STATIC_ROOT = os.path.join(BASE_DIR, 'public/static')
+#STATIC_URL = '/public/static/'
+#MEDIA_URL = '/public/media/'
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'public/media')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'public/static')
 
 try:
     from local_settings import *
