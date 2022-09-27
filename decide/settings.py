@@ -25,7 +25,7 @@ SECRET_KEY = '^##ydkswfu0+=ofw0l#$kv^8n)0$i(qd&d&ol#p9!b$8*5%j1+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [*]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -109,13 +109,15 @@ WSGI_APPLICATION = 'decide.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'decide',
-        'USER': 'decide',
-        'PASSWORD': 'decide',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': os.environ.get('POSTGRESQL_ADDON_DB', ''),
+        'USER': os.environ.get('POSTGRESQL_ADDON_USER', ''),
+        'PASSWORD': os.environ.get('POSTGRESQL_ADDON_PASSWORD', ''),
+        'HOST': os.environ.get('POSTGRESQL_ADDON_HOST', ''),
+        'PORT': os.environ.get('POSTGRESQL_ADDON_PORT', ''),
     }
 }
+
+
 
 
 # Password validation
@@ -164,6 +166,12 @@ KEYBITS = 256
 # Versioning
 ALLOWED_VERSIONS = ['v1', 'v2']
 DEFAULT_VERSION = 'v1'
+
+
+STATIC_URL = '/public/static/'
+MEDIA_URL = '/public/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'public/media')
+STATIC_ROOT = os.path.join(BASE_DIR, 'public/static')
 
 try:
     from local_settings import *
