@@ -5,7 +5,6 @@
     "deploy": {
         "module": "decide.wsgi:application",
         "managetasks": [
-            "collectstatic --noinput",
 	    "migrate"
         ]
     }
