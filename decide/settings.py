@@ -72,6 +72,17 @@ MODULES = [
 
 BASEURL = 'http://app_7b95e0fe-1532-4069-a286-5c2412580e64.cleverapps.io'
 
+APIS = {
+    'authentication':BASEURL,
+    'base':BASEURL,
+    'booth':BASEURL,
+    'census':BASEURL,
+    'mixnet':BASEURL,
+    'postproc':BASEURL,
+    'store':BASEURL,
+    'visualizer':BASEURL,
+    'voting':BASEURL,
+    }
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
